@@ -1,0 +1,10 @@
+# What each file is. Personas see the description; truth and notes are for hooks and reviewers.
+files:
+  - name: goods.png
+    description: a photo of the blue glazed vase a customer ordered
+    tags: [product-photo]
+    notes: The photo to upload on an order page.
+  - name: supplier-notes.pdf
+    description: a one-page PDF of notes from your clay supplier, not a photo
+    tags: [document, wrong-kind]
+    notes: Not an image. Shows how the order page treats a file of the wrong kind.

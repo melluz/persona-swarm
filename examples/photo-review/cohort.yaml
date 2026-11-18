@@ -1,0 +1,26 @@
+id: lumen-smoke
+description: Two people, on a desktop and on a phone, take photos from upload to a shared album.
+target: target.yaml
+mode: explore
+personas:
+  - ../../personas/expert-power-user.yaml
+  - ../../personas/busy-phone-user.yaml
+missions:
+  "*": |
+    You are back from a weekend trip. Upload your photos, check the labels and captions the AI
+    suggests (keep the right ones, fix the wrong ones), put the good photos into an album called
+    "Weekend", find the beach photo again by searching for a label, and share the album with a link
+    that expires in a week. If a photo is not good enough, leave it out or delete it.
+# Each persona gets two photos the tagger cache can answer, spread so sessions cover different ones.
+# Until the cache is warmed (see README.md), nothing matches and personas get no photos.
+media:
+  "*": { tags: [photo], count: 2, cached: tagger }
+# Played by outside agents through `persona-swarm act` (any agent, or a person).
+roles:
+  persona: { driver: external }
+budgets: { minutesPerPersona: 20, turnsPerPersona: 140 }
+schedule: { staggerSec: 5 }
+exporters:
+  - { type: markdown }
+# Group the reports wording cannot (one fault in other words, a known issue) after each run:
+# grouping: { command: [claude, -p] }

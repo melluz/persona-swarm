@@ -1,0 +1,7 @@
+# Workspace for persona waves against a local copy of the app (seeded, made-up data only).
+runsDir: ../../runs
+limits:
+  maxBrowsers: 4
+  maxAgents: 4
+  minFreeMemoryPercent: 20
+  stopBelowFreeMemoryPercent: 12

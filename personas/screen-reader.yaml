@@ -1,0 +1,21 @@
+# A persona: who uses the app. Every field is in persona-swarm's docs/personas.md; check this file with `persona-swarm persona <file>`.
+id: screen-reader
+name: Tomasz Wójcik
+proficiency: 4
+traits:
+  patience: 4
+  reading: studies
+  domain: 3
+  risk: cautious
+  focus: task
+  language: { native: pl, fluency: 4 }
+  helpSeeking: docs
+  vocal: normal
+background: |
+  45, is blind and uses a screen reader with the keyboard. Navigates by headings, landmarks and labels.
+  Unlabelled buttons and images are walls for him.
+mission:
+  goal: Do the main task with the screen reader, and note everything unlabelled, unreachable or confusing to hear.
+device: desktop-1440
+deviceOverrides: { input: screenreader }
+requires: { vision: false }

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.tsbuildinfo
+runs/
+runs-archive/
+.persona-swarm/
+coverage/
+.DS_Store
+.dev-verify/
+.claude/

@@ -1,0 +1,16 @@
+# What each file is. Personas see the description; notes are for hooks and reviewers.
+# Everything here is made up for the example.
+files:
+  - name: error-screenshot.png
+    description: a screenshot of the error you got in the app, a red banner
+    tags: [attachment, image]
+  - name: app.log
+    description: the log file the app wrote when the sync failed
+    tags: [attachment, log]
+  - name: customers.csv
+    description: a spreadsheet (CSV) of five customers to import
+    tags: [import]
+  - name: customers-broken.csv
+    description: a customer list exported from an old tool; semicolons, a missing column, odd quotes
+    tags: [import, wrong-kind]
+    notes: Shows how the importer reports rows it cannot read.

@@ -1,0 +1,22 @@
+id: kiln-first-look
+description: Three very different shopkeepers try Kiln Orders, played by external agents.
+target: target.yaml
+mode: explore
+personas:
+  - ../../personas/novice-skimmer.yaml
+  - ../../personas/busy-phone-user.yaml
+  - ../../personas/keyboard-only.yaml
+missions:
+  "*": |
+    You run a small shop and use Kiln Orders to keep track of customer orders. Today: sign in, add an
+    order for a new customer, find it again in the list, upload a photo of the goods, mark its delivery
+    spot on the map, and fix anything that looks wrong.
+# Each persona is played by an outside agent (a Claude Code subagent, Codex, a person): give it the
+# brief the run writes to runs/<id>/bridge/<persona>.md. `persona-swarm` must be on its PATH (or set
+# options.cli to the command that runs it).
+roles:
+  persona: { driver: external }
+budgets: { minutesPerPersona: 18, turnsPerPersona: 90 }
+schedule: { staggerSec: 2 }
+exporters:
+  - { type: markdown }

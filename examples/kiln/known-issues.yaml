@@ -1,0 +1,3 @@
+- id: K-1
+  title: Search does not find names with accents when typed without them
+  description: Typing jose does not find José.

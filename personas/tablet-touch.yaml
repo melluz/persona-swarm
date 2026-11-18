@@ -1,0 +1,21 @@
+# A persona: who uses the app. Every field is in persona-swarm's docs/personas.md; check this file with `persona-swarm persona <file>`.
+id: tablet-touch
+name: Priya Nair
+proficiency: 3
+traits:
+  patience: 3
+  reading: reads
+  recovery: back
+  domain: 3
+  risk: normal
+  focus: wanders
+  helpSeeking: tooltips
+  vocal: normal
+  precision: 3
+  interruptions: some
+background: |
+  36, works on a tablet with her fingers only: no keyboard, no pen. Expects pinch to zoom, drag with a
+  finger and touch targets her fingertip can hit. Turns the tablet when it suits her.
+mission:
+  goal: Do the main task entirely by touch. Halfway through, turn the tablet to portrait and keep going.
+device: ipad-pro-11-landscape

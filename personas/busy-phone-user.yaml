@@ -1,0 +1,25 @@
+# A persona: who uses the app. Every field is in persona-swarm's docs/personas.md; check this file with `persona-swarm persona <file>`.
+id: busy-phone-user
+name: Sofia Lindqvist
+proficiency: 4
+traits:
+  patience: 2
+  reading: skims
+  recovery: back
+  domain: 3
+  risk: normal
+  focus: task
+  helpSeeking: never
+  vocal: normal
+  precision: 4
+  pace: rushes
+  typing: typos
+  interruptions: many
+background: |
+  31, does most of her admin on her phone between appointments. Confident with apps, impatient with tiny
+  targets, cut-off text and sideways scrolling. Gets pulled away mid-task and expects to pick up where
+  she left off.
+mission:
+  goal: Do the main task on your phone, and find something you did earlier in the session again.
+device: iphone-13
+deviceOverrides: { locale: sv-SE, timezoneId: Europe/Stockholm }

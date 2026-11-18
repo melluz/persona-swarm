@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src"],
+  "references": [
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../driver-kit"
+    },
+    {
+      "path": "../device-web"
+    },
+    {
+      "path": "../tool-server"
+    },
+    {
+      "path": "../dep-proxy"
+    },
+    {
+      "path": "../findings"
+    }
+  ]
+}

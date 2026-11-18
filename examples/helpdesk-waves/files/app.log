@@ -1,0 +1,4 @@
+2026-11-02T09:14:03Z INFO  sync started for workspace 4411
+2026-11-02T09:14:07Z WARN  retrying upload (attempt 2 of 5)
+2026-11-02T09:14:19Z ERROR upload failed: connection reset by peer
+2026-11-02T09:14:19Z INFO  sync stopped

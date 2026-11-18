@@ -1,0 +1,8 @@
+# Workspace for smoke runs against a local copy of the app (seeded test data only).
+runsDir: ../../runs
+limits:
+  # Leave room for the app and the tagger: two browsers at most, and stop early on low memory.
+  maxBrowsers: 2
+  maxAgents: 2
+  minFreeMemoryPercent: 25
+  stopBelowFreeMemoryPercent: 15

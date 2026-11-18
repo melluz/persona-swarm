@@ -1,0 +1,23 @@
+{
+  "name": "@persona-swarm/device-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "@persona-swarm/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@persona-swarm/core": "workspace:*",
+    "playwright-core": "1.63.0"
+  },
+  "devDependencies": {
+    "@persona-swarm/fixture-app": "workspace:*"
+  }
+}

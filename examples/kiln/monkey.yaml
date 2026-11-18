@@ -1,0 +1,14 @@
+id: kiln-monkey
+description: The quick start. Model-free "monkeys" press things at random and report what breaks; no keys needed.
+target: monkey-target.yaml
+mode: explore
+personas:
+  - ../../personas/curious-explorer.yaml
+  - ../../personas/busy-phone-user.yaml
+  - ../../personas/keyboard-only.yaml
+roles:
+  persona: { driver: mock, options: { mode: monkey, seed: 7 } }
+budgets: { minutesPerPersona: 3, turnsPerPersona: 120 }
+schedule: { staggerSec: 2 }
+exporters:
+  - { type: markdown }

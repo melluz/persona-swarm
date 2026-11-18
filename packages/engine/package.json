@@ -1,0 +1,29 @@
+{
+  "name": "@persona-swarm/engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "@persona-swarm/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@persona-swarm/core": "workspace:*",
+    "@persona-swarm/driver-kit": "workspace:*",
+    "@persona-swarm/device-web": "workspace:*",
+    "@persona-swarm/tool-server": "workspace:*",
+    "@persona-swarm/dep-proxy": "workspace:*",
+    "@persona-swarm/findings": "workspace:*"
+  },
+  "devDependencies": {
+    "@persona-swarm/fixture-app": "workspace:*",
+    "@persona-swarm/driver-mock": "workspace:*",
+    "yaml": "2.9.1"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "packages/core"
+    },
+    {
+      "path": "packages/driver-kit"
+    },
+    {
+      "path": "packages/device-web"
+    },
+    {
+      "path": "packages/tool-server"
+    },
+    {
+      "path": "packages/dep-proxy"
+    },
+    {
+      "path": "packages/findings"
+    },
+    {
+      "path": "packages/server"
+    },
+    {
+      "path": "packages/engine"
+    },
+    {
+      "path": "packages/fixture-app"
+    },
+    {
+      "path": "packages/cli"
+    },
+    {
+      "path": "drivers/mock"
+    },
+    {
+      "path": "drivers/ai-sdk"
+    },
+    {
+      "path": "drivers/claude-code"
+    },
+    {
+      "path": "drivers/external"
+    }
+  ]
+}

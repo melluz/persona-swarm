@@ -1,0 +1,7 @@
+# Problems already known, so runs do not report them as new. Mock entries for the example.
+- id: K-1
+  title: The caption field drops emoji on save
+  description: A caption with an emoji saves without it, with no message.
+- id: K-2
+  title: "Upload of a file that is not an image says 'Something went wrong'"
+  description: The message does not say what was wrong or which files are accepted.

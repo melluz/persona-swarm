@@ -1,0 +1,48 @@
+# A mock target: "Lumen Albums" does not exist. Copy this folder and point it at your own app.
+# It shows the parts a real app usually needs: starting and stopping the app, test accounts,
+# files to upload, and a slow, costly AI dependency answered from a cache through the dependency proxy.
+id: lumen
+name: Lumen Albums
+baseUrl: http://127.0.0.1:3000
+brief: |
+  Lumen Albums keeps your photos in albums. Upload a photo and an AI tagger suggests labels and a
+  caption in about ten seconds. Review them (accept, remove or add labels, edit the caption), put
+  photos into albums, search by label, and share an album with a link that can expire.
+health: { url: http://127.0.0.1:3000/sign-in }
+lifecycle:
+  # Started only when the app is not already up, and stopped again after the run.
+  up:
+    - run: [npm, run, dev]
+      cwd: ../../../lumen-albums # your app's folder
+      background: true
+      readyUrl: http://127.0.0.1:3000/sign-in
+      timeoutSec: 300
+      # The app calls the tagger through this run's dependency proxy (below), not directly.
+      env: { TAGGER_URL: "http://127.0.0.1:9001" }
+  down:
+    - run: [npm, run, dev:stop]
+      cwd: ../../../lumen-albums
+  # Between waves or runs: put the test database back to its seed.
+  reset:
+    - run: [npm, run, db:seed]
+      cwd: ../../../lumen-albums
+accounts:
+  # Seeded test users of the app's local sign-in. Never real accounts.
+  - { id: maya, username: maya@lumen.test, password: lumen-test }
+  - { id: tom, username: tom@lumen.test, password: lumen-test }
+signIn: { mode: persona, url: /sign-in }
+media:
+  - { dir: ./files, pattern: '\.(png|txt)$', manifest: files/manifest.yaml }
+dependencies:
+  - id: tagger
+    description: The AI tagger (slow and paid per call); during a run its answers come from the cache.
+    listen: { port: 9001 }
+    upstream: http://127.0.0.1:9000
+    mode: cached
+    match: { methods: [POST], pathPrefix: /v1/tag }
+    cache: { dir: tag-cache, key: { multipartField: image }, statuses: [200] }
+    # Answer as slowly as the real tagger does, so the personas meet the real waiting.
+    latencyMs: { min: 6000, max: 14000 }
+    concurrency: 1
+    maxWaitMs: 120000
+knownIssues: known-issues.yaml

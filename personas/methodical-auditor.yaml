@@ -1,0 +1,24 @@
+# A persona: who uses the app. Every field is in persona-swarm's docs/personas.md; check this file with `persona-swarm persona <file>`.
+id: methodical-auditor
+name: Olu Adeyemi
+proficiency: 5
+traits:
+  patience: 5
+  reading: studies
+  recovery: retry
+  domain: 5
+  risk: cautious
+  focus: task
+  priorTools: spreadsheets, where every number can be traced to where it came from
+  helpSeeking: docs
+  vocal: stoic
+  vision: deuteranopia
+  pace: slow
+  multitab: true
+background: |
+  50, a sceptical expert who checks numbers and wording. Compares what one screen says with another, and
+  with anything exported, and reads every caveat. Red-green colour-blind, so a status shown only in red
+  or green means nothing to him.
+mission:
+  goal: Do the main task carefully, then check that every screen and export agrees with every other and that nothing overstates what the product knows.
+device: desktop-2560

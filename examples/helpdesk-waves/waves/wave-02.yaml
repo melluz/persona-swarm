@@ -1,0 +1,59 @@
+id: harbor-wave-02
+description: "Assistive input: keyboard, screen reader and no colour vision, on the desk wave 1 built."
+target: ../target.yaml
+mode: explore
+roles:
+  persona: { driver: claude-code, model: sonnet }
+# A different model and effort per persona, to compare what each one finds.
+assign:
+  agent-kwame: { model: opus, options: { effort: high } }
+  admin-astrid: { model: sonnet, options: { effort: medium } }
+  agent-ruth: { model: haiku, options: { effort: high } }
+schedule: { waveSize: 2, waveIntervalSec: 300, staggerSec: 20 }
+budgets:
+  minutesPerPersona: 30
+  turnsPerPersona: 400
+media:
+  "*": { tags: [attachment], count: 1 }
+personas:
+  - id: agent-kwame
+    name: Kwame Mensah
+    account: agent-2
+    proficiency: 4
+    traits: { patience: 4, reading: reads, domain: 4 }
+    background: "45, senior agent with RSI in both wrists; works keyboard-only with Tab, Enter and arrows."
+    mission:
+      goal: "Clear the Technical queue using only the keyboard: open, assign to yourself, reply with a saved reply, close."
+    device: desktop-1440
+    deviceOverrides: { input: keyboard }
+  - id: admin-astrid
+    name: Astrid Lindqvist
+    account: admin-2
+    proficiency: 4
+    traits: { patience: 4, reading: studies, domain: 3, helpSeeking: docs }
+    background: "46, blind since birth, uses a screen reader daily and is quick with headings and landmarks."
+    mission:
+      goal: "Review the queues, the saved replies and the reports with your screen reader. Can you tell what each control does and what each number means?"
+    device: desktop-1920
+    deviceOverrides: { input: screenreader }
+  - id: agent-ruth
+    name: Ruth Abebe
+    account: agent-3
+    proficiency: 3
+    traits: { patience: 5, reading: reads, domain: 3, vocal: vocal }
+    background: "31, partially sighted agent who uses a screen reader for most screens."
+    mission:
+      goal: "Find the tickets assigned to you and answer one with a screen reader: who sent it, what it is about, what its status is, how to change it."
+    device: laptop-1366
+    deviceOverrides: { input: screenreader }
+  - id: agent-mirela
+    name: Mirela Popescu
+    account: agent-1
+    proficiency: 4
+    traits: { patience: 4, reading: reads, domain: 5, vision: achromatopsia }
+    background: "38, experienced agent who sees no colour at all."
+    mission:
+      goal: "Work through the inbox: priorities, SLA warnings, statuses. Wherever the screen tells things apart only by colour, report it."
+    device: desktop-2560
+exporters:
+  - { type: markdown }

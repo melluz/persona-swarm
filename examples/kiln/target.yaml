@@ -1,0 +1,19 @@
+id: kiln
+name: Kiln Orders
+baseUrl: http://127.0.0.1:4500
+brief: |
+  Kiln Orders is a simple web app for small shops to record customer orders: a list of orders you can
+  search, a form to add an order, a page per order where you can upload a photo of the goods and mark
+  the delivery spot on a map, and a settings page.
+health: { url: http://127.0.0.1:4500/sign-in }
+accounts:
+  - { id: shop-1, username: kwabena@fixture.test, password: shop }
+  - { id: shop-2, username: sofia@fixture.test, password: shop }
+  - { id: shop-3, username: aisha@fixture.test, password: shop }
+signIn:
+  mode: persona
+  url: /sign-in
+# Files personas can upload; files/manifest.yaml says what each one is (see docs/media.md).
+media:
+  - { dir: ./files, pattern: '\.(png|pdf)$', manifest: files/manifest.yaml }
+knownIssues: known-issues.yaml

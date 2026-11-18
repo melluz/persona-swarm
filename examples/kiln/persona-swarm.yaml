@@ -1,0 +1,6 @@
+runsDir: ../../runs
+limits:
+  maxBrowsers: 3
+  maxAgents: 3
+  minFreeMemoryPercent: 30
+  stopBelowFreeMemoryPercent: 15

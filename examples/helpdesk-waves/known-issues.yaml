@@ -1,0 +1,7 @@
+# Problems already known, so waves do not report them as new. Mock entries for the example.
+- id: K-1
+  title: The SLA timer keeps running outside business hours
+  description: A ticket sent on Friday evening shows as overdue on Monday morning.
+- id: K-2
+  title: Merging two tickets drops the attachments of the second one
+  description: Only the first ticket's attachments are kept after a merge.

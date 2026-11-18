@@ -1,0 +1,36 @@
+# A mock target: "Harbor Desk" does not exist. Copy this folder and point it at your own app.
+id: harbor-desk
+name: Harbor Desk
+baseUrl: http://127.0.0.1:8080
+brief: |
+  Harbor Desk is a help desk for small software companies. Customers send tickets (by the web form
+  or by email) with attachments. Agents answer them from a shared inbox: assign, reply, add internal
+  notes, use saved replies (macros), merge duplicates and close. Admins set up the team, the queues,
+  the saved replies, business hours and the SLA timers, import customers from a CSV file, and read
+  the reports.
+glossary: |
+  Queue: a shared list of tickets for one team. Macro: a saved reply. SLA: the time within which a
+  ticket must get its first answer.
+health: { url: http://127.0.0.1:8080/health }
+lifecycle:
+  up:
+    - run: [docker, compose, up, -d]
+      cwd: ../../../harbor-desk # your app's folder
+      readyUrl: http://127.0.0.1:8080/health
+      timeoutSec: 300
+  down:
+    - run: [docker, compose, down]
+      cwd: ../../../harbor-desk
+accounts:
+  # Seeded test users of the app's local sign-in. Never real accounts.
+  - { id: admin-1, username: admin1@harbor.test, password: harbor-test }
+  - { id: admin-2, username: admin2@harbor.test, password: harbor-test }
+  - { id: agent-1, username: agent1@harbor.test, password: harbor-test }
+  - { id: agent-2, username: agent2@harbor.test, password: harbor-test }
+  - { id: agent-3, username: agent3@harbor.test, password: harbor-test }
+  - { id: customer-1, username: ada@customer.test, password: harbor-test }
+  - { id: customer-2, username: bruno@customer.test, password: harbor-test }
+signIn: { mode: persona, url: /sign-in }
+media:
+  - { dir: ./files, pattern: '\.(png|log|csv)$', manifest: files/manifest.yaml }
+knownIssues: known-issues.yaml

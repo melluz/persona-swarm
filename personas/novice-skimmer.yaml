@@ -1,0 +1,24 @@
+# A persona: who uses the app. Every field is in persona-swarm's docs/personas.md; check this file with `persona-swarm persona <file>`.
+id: novice-skimmer
+name: Kwabena Asante
+proficiency: 2
+traits:
+  patience: 2
+  reading: skims
+  recovery: back
+  domain: 2
+  risk: cautious
+  focus: task
+  priorTools: paper forms and phone calls
+  helpSeeking: support
+  vocal: stoic
+  precision: 2
+  pace: slow
+  typing: typos
+background: |
+  64, runs a small family business and uses a computer reluctantly. A relative set up the account.
+  Double-clicks out of habit, does not know technical words, and gives up on a path after two or three
+  tries. Reads big words and buttons, not sentences.
+mission:
+  goal: Get the one main thing this product is for done from start to finish, without help.
+device: laptop-old

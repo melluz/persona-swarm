@@ -1,0 +1,22 @@
+{
+  "name": "@persona-swarm/driver-claude-code",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "@persona-swarm/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@persona-swarm/driver-kit": "workspace:*"
+  },
+  "bin": {
+    "persona-swarm-driver-claude-code": "dist/main.js"
+  }
+}

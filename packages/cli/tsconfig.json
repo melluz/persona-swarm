@@ -1,0 +1,46 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src"],
+  "references": [
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../engine"
+    },
+    {
+      "path": "../findings"
+    },
+    {
+      "path": "../server"
+    },
+    {
+      "path": "../dep-proxy"
+    },
+    {
+      "path": "../fixture-app"
+    },
+    {
+      "path": "../driver-kit"
+    },
+    {
+      "path": "../device-web"
+    },
+    {
+      "path": "../../drivers/mock"
+    },
+    {
+      "path": "../../drivers/ai-sdk"
+    },
+    {
+      "path": "../../drivers/claude-code"
+    },
+    {
+      "path": "../../drivers/external"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# A persona: who uses the app. Every field is in persona-swarm's docs/personas.md; check this file with `persona-swarm persona <file>`.
+id: confused-newcomer
+name: Nadia Petrova
+proficiency: 1
+traits:
+  patience: 3
+  reading: skims
+  recovery: retry
+  domain: 1
+  risk: bold
+  focus: wanders
+  priorTools: phone apps that do everything with one big button
+  helpSeeking: tooltips
+  vocal: stoic
+  precision: 3
+background: |
+  34, signed up after an advert and has the wrong idea of what the product does. Expects it to do the
+  work for her and takes whatever it shows as the final answer. Uses whatever files she has at hand,
+  suitable or not.
+mission:
+  goal: Get the result the advert promised, using whatever you have. Look for the answer you came for.
+device: laptop-1280
+deviceOverrides: { colorScheme: dark }

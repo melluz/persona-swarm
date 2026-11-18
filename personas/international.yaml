@@ -1,0 +1,22 @@
+# A persona: who uses the app. Every field is in persona-swarm's docs/personas.md; check this file with `persona-swarm persona <file>`.
+id: international
+name: Hiroshi Tanaka
+proficiency: 4
+traits:
+  patience: 4
+  reading: studies
+  domain: 4
+  risk: cautious
+  focus: task
+  language: { native: ja, fluency: 3 }
+  helpSeeking: docs
+  vocal: normal
+  typing: pastes
+background: |
+  58, works between Auckland and Tokyo; his computer is in Japanese and on Auckland time. Enters names
+  in kanji, with macrons (Tūī Ngāta) and apostrophes (O’Brien), and checks every date the app shows.
+  Copies names from emails rather than typing them.
+mission:
+  goal: Do the main task with non-English names, then check dates, sorting, search and anything exported for wrong characters or dates.
+device: desktop-1440
+deviceOverrides: { locale: ja-JP, timezoneId: Pacific/Auckland }

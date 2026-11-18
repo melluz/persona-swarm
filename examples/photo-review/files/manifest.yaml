@@ -1,0 +1,19 @@
+# What each file is. Personas see the description; truth and notes are for hooks and reviewers.
+# All images are synthetic (drawn by a script), so they are safe to publish and share.
+files:
+  - name: beach.png
+    description: a holiday photo of a beach on a sunny day
+    tags: [photo, landscape]
+    truth: truth/beach.json
+  - name: street-night.png
+    description: a photo of a city street at night, with lit windows
+    tags: [photo, city]
+    truth: truth/street-night.json
+  - name: blurry.png
+    description: a photo that came out blurred, nothing recognisable in it
+    tags: [photo, poor-quality]
+    notes: The tagger returns low-confidence labels for it. Does the app say so, or present them as facts?
+  - name: notes.txt
+    description: a text file with a shopping list, not a photo
+    tags: [document, wrong-kind]
+    notes: Not an image. Shows how the upload treats a file of the wrong kind.

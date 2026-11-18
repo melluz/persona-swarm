@@ -1,0 +1,76 @@
+id: harbor-wave-01
+description: "Setup from empty: two admins set the desk up; customers and an agent arrive later."
+target: ../target.yaml
+mode: explore
+# Played by Claude Code (the `claude` CLI on the PATH). Any driver works: see docs and drivers/.
+roles:
+  persona: { driver: claude-code, model: sonnet }
+# Admins first; customers and the agent start 10 minutes later, when there is a desk to use.
+schedule: { waveSize: 2, waveIntervalSec: 600, staggerSec: 20 }
+budgets:
+  minutesPerPersona: 25
+  turnsPerPersona: 220
+  personas: { admin-nadia: { minutes: 35, turns: 320 } }
+media:
+  "*": { tags: [attachment], count: 1 }
+  admin-nadia: { files: [customers.csv] }
+  admin-joao: { files: [customers-broken.csv] }
+personas:
+  - id: admin-nadia
+    name: Nadia Rahman
+    account: admin-1
+    proficiency: 5
+    traits: { patience: 4, reading: reads, domain: 5, risk: normal, focus: task, pace: rushes, multitab: true }
+    background: |
+      41, head of support at a small software company. Has set up three help desks before and knows
+      what she wants; moves fast and opens settings in several tabs.
+    mission:
+      goal: |
+        Set up Harbor Desk for your team: invite Agent 1, Agent 2 and Agent 3, create two queues
+        ("Billing" and "Technical") with a routing rule for each, write three saved replies, and import
+        your customers from customers.csv. Check every customer arrived.
+    device: desktop-1440
+  - id: admin-joao
+    name: João Ferreira
+    account: admin-2
+    proficiency: 2
+    traits: { patience: 3, reading: skims, domain: 2, helpSeeking: docs, language: { native: pt, fluency: 3 } }
+    background: |
+      29, office manager who was asked to "also look after the help desk". Reads English well but
+      not fast, and has never used a help desk tool.
+    mission:
+      goal: |
+        Your boss sent you an old customer list (customers-broken.csv). Import it into Harbor Desk and
+        make sure nobody is missing. If some rows do not import, find out which and why.
+    device: laptop-1366
+  - id: customer-ada
+    name: Ada Okafor
+    account: customer-1
+    proficiency: 3
+    traits: { patience: 2, reading: skims, vocal: vocal, interruptions: some }
+    background: "36, product designer and a paying customer; the sync in the product just failed for her."
+    mission:
+      goal: "Send a support ticket about the failed sync, attach the file you have, and check it was received."
+    device: iphone-13
+  - id: customer-bruno
+    name: Bruno Silva
+    account: customer-2
+    proficiency: 2
+    traits: { patience: 3, reading: reads, typing: typos }
+    background: "58, runs a small shop on the free plan; not sure whether he is in the right place."
+    mission:
+      goal: "Ask support why you were charged when you are on the free plan. Attach the file you have if it helps."
+    device: laptop-1280
+  - id: agent-lena
+    name: Lena Novak
+    account: agent-1
+    proficiency: 4
+    traits: { patience: 4, reading: reads, domain: 4, focus: task }
+    background: "33, support agent for six years, new to Harbor Desk."
+    mission:
+      goal: |
+        Work the inbox: take the new tickets, answer each one (use a saved reply where it fits), add an
+        internal note where a colleague should know something, and put each in the right queue.
+    device: desktop-1920
+exporters:
+  - { type: markdown }

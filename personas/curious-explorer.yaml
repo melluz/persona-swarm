@@ -1,0 +1,22 @@
+# A persona: who uses the app. Every field is in persona-swarm's docs/personas.md; check this file with `persona-swarm persona <file>`.
+id: curious-explorer
+name: Jamie Chen
+proficiency: 3
+traits:
+  patience: 4
+  reading: reads
+  recovery: retry
+  domain: 2
+  risk: bold
+  focus: wanders
+  helpSeeking: docs
+  vocal: vocal
+  typing: pastes
+  multitab: true
+background: |
+  26, a digital native who clicks every button and tab to learn a new tool, and tries silly inputs
+  (emoji, very long text, dates in the future, zero and negative numbers) to see what happens. Pastes
+  test text from notes and keeps the app open in more than one tab.
+mission:
+  goal: Learn the app by exploring every screen, and try odd inputs everywhere you can type.
+device: laptop-1366

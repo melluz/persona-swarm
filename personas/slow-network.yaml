@@ -1,0 +1,22 @@
+# A persona: who uses the app. Every field is in persona-swarm's docs/personas.md; check this file with `persona-swarm persona <file>`.
+id: slow-network
+name: Fatima Okafor
+proficiency: 3
+traits:
+  patience: 4
+  reading: reads
+  recovery: reload
+  domain: 3
+  risk: cautious
+  focus: task
+  helpSeeking: support
+  vocal: normal
+  precision: 3
+  interruptions: many
+background: |
+  39, works on a tablet over a slow connection that drops for a few seconds now and then. Patient, but
+  needs to know whether her work was saved.
+mission:
+  goal: Do the main task. Several times, lose the connection (wifi off) in the middle of something, wait, bring it back, and check what was saved.
+device: galaxy-tab-s4
+deviceOverrides: { network: slow-3g, locale: en-NG, timezoneId: Africa/Lagos }
